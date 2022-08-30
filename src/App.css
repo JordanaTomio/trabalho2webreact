@@ -73,31 +73,15 @@
   position: relative;
   left: 5px;
   bottom: -10px;
-  font-family: "Verdana";
-  letter-spacing: 5px;
-  color: #272727;
+  font-family: "Inter";
+  letter-spacing: 8px;
+  color: #383838;
   font-size: medium;
 }
 
 .mini {
   position: relative;
   bottom: 8px;
+  font-family: "Inter";
   font-size: small;
-}
-
-.cabecalho {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  height: 85px;
-  vertical-align: middle;
-  background-color: #C5A4A1;
-}
-
-.logo {
-  display: inline-block;
-  float: left;
-  width: 53px;
-  padding-top: 8px;
 }
