@@ -73,15 +73,14 @@
   position: relative;
   left: 5px;
   bottom: -10px;
-  font-family: "Inter";
-  letter-spacing: 8px;
-  color: #383838;
+  font-family: "Verdana";
+  letter-spacing: 5px;
+  color: #272727;
   font-size: medium;
 }
 
 .mini {
   position: relative;
   bottom: 8px;
-  font-family: "Inter";
   font-size: small;
 }
