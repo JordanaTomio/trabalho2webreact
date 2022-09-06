@@ -1,15 +1,18 @@
-import {TextField} from "@mui/material";
+import {Link, TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {useNavigate } from "react-router-dom";
 
 function Homepage() {
     const navigate = useNavigate();
-    const home = () => {
+    const registrar = () => {
         navigate("/register");
     }
-
-    return (<div className="split left">
+    const logar = () => {
+        navigate("/login");
+    }
+    return (
+        <div className="split left">
         <div className="centered">
             <h2 className="preto"> F </h2>
             <h2 className="preto-claro"> R </h2>
@@ -47,12 +50,15 @@ function Homepage() {
                 variant="contained"
                 size={"large"}
                 endIcon={<ArrowForwardIcon/>}
-                onClick={home}
+                onClick={logar}
             >
                 Entrar</Button>
 
             <div className="texto-padrao mini">
-                <h3> Ja possui conta? Clique aqui. </h3>
+                <h3>Não possui cadastro? </h3>
+                <Link href={"/register"} onClick={registrar}>
+                    Clique aqui
+                </Link>
             </div>
 
         </div>

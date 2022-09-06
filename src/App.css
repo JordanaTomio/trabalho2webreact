@@ -84,3 +84,20 @@
   bottom: 8px;
   font-size: small;
 }
+
+.cabecalho {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 85px;
+  vertical-align: middle;
+  background-color: #C5A4A1;
+}
+
+.logo {
+  display: inline-block;
+  float: left;
+  width: 53px;
+  padding-top: 8px;
+}

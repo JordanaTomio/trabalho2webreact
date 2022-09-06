@@ -8,6 +8,7 @@ import {
 
 import Homepage from "./Homepage"
 import Register from "./Register"
+import Login from "./Login"
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<Homepage />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
 
                 </Routes>
             </Router>

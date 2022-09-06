@@ -1,4 +1,3 @@
-import React from "react"
 import {Avatar, Divider, ListItemIcon, Menu, MenuItem} from "@mui/material";
 import {Logout, PersonAdd, Settings} from "@mui/icons-material";
 
@@ -15,7 +14,7 @@ function Login() {
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
-                //open={open}
+                open={open}
                 onClose={handleClose}
                 MenuListProps={{
                     'aria-labelledby': 'basic-button',
