@@ -123,3 +123,13 @@
   border: 0 ;
 }
 
+.rodape {
+  position: fixed;
+  left: 0px;
+  top: 915px;
+  right: 0px;
+  height: 60px;
+  text-align: right;
+  background-color: #C5A4A1;
+}
+

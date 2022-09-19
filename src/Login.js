@@ -24,7 +24,7 @@ export default function Login() {
     };
 
     return (
-        <div className="cabecalho">
+        <div>  <div className="cabecalho">
             <h2 className="logo">FRUB</h2>
             <Toolbar className="toolbar">
                 {Object.keys(menuItems).map((item, index) => (
@@ -56,6 +56,8 @@ export default function Login() {
                     </div>
                 ))}
             </Toolbar>
+        </div>
+            <div className="rodape"> Alunos: Elizabeth, Jordana e Ueran.</div>
         </div>
     );
 }
