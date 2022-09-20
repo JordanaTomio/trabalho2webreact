@@ -6,7 +6,14 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import { menuItems } from "./infoMenus";
 import {Link, useNavigate} from "react-router-dom";
+import {Card, CardActions, CardContent, Typography} from "@mui/material";
 
+const styles = {
+    card: {
+        minWidth: 275,
+        display: "inline-block"
+    }
+};
 
 export default function Login() {
     const navigate = useNavigate();
@@ -56,6 +63,73 @@ export default function Login() {
                     </div>
                 ))}
             </Toolbar>
+
+            <div className="card">
+                <Card variant="outlined" sx={{ minWidth: 100 }} className="card2">
+                    <CardContent>
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            BOAS VINDAS
+                        </Typography>
+                        <Typography variant="h5" component="div">
+                            duvidas?
+                        </Typography>
+                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            adjective
+                        </Typography>
+                        <Typography variant="body2">
+                            well meaning and kindly.
+                            <br />
+                            {'"a benevolent smile"'}
+                        </Typography>
+                    </CardContent>
+                </Card>
+
+                <Card variant="outlined" sx={{ minWidth: 100 }} className="card2">
+                    <CardContent>
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            FORMULARIO
+                        </Typography>
+                        <Typography variant="h5" component="div">
+                            duvidas?
+                        </Typography>
+                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            adjective
+                        </Typography>
+                        <Typography variant="body2">
+                            well meaning and kindly.
+                            <br />
+                            {'"a benevolent smile"'}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button size="small">Learn More</Button>
+                    </CardActions>
+                </Card>
+
+                <Card variant="outlined" sx={{ minWidth: 100 }}  className="card2">
+                    <CardContent>
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            TABELA
+                        </Typography>
+                        <Typography variant="h5" component="div">
+                            duvidas?
+                        </Typography>
+                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            adjective
+                        </Typography>
+                        <Typography variant="body2">
+                            well meaning and kindly.
+                            <br />
+                            {'"a benevolent smile"'}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button size="small">Learn More</Button>
+                    </CardActions>
+                </Card>
+            </div>
+
+
         </div>
             <div className="rodape"> Alunos: Elizabeth, Jordana e Ueran.</div>
         </div>
