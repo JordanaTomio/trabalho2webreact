@@ -1,0 +1,96 @@
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+    left: 0;
+    background-color: #C5A4A1;
+}
+
+/* Control the right side */
+.right {
+    right: 0;
+    background-color: #d2d1d1;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.preto {
+    position: relative;
+    left: -120px;
+    bottom: 80px;
+    font-family: "Agency FB";
+    letter-spacing: 10px;
+    font-size: xxx-large;
+}
+
+.preto-claro {
+    position: relative;
+    left: -60px;
+    bottom: 70px;
+    font-family: "Agency FB";
+    letter-spacing: 10px;
+    color: #555555;
+    font-size: xxx-large;
+}
+
+.cinza-escuro {
+    position: relative;
+    left: -10px;
+    bottom: 60px;
+    font-family: "Agency FB";
+    letter-spacing: 10px;
+    color: #888888;
+    font-size: xxx-large;
+}
+
+.cinza {
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+    font-family: "Agency FB";
+    letter-spacing: 10px;
+    color: #999999;
+    font-size: xxx-large;
+}
+
+.texto-padrao {
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+    font-family: "Inter";
+    letter-spacing: 10px;
+    color: #5d5d5d;
+    font-size: medium;
+}
+
+.mini {
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+    font-family: "Inter";
+    letter-spacing: 10px;
+    color: #5d5d5d;
+    font-size: small;
+}
+
