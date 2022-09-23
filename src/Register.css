@@ -1,5 +1,4 @@
 body {
-    background: #C5A4A1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +16,8 @@ body {
     text-align: center;
     justify-content: center;
     justify-items: center;
-    margin-top: -6%; 
-}   
+    margin-top: -6%;
+}
 
 .imagem {
     margin-top: 4%;

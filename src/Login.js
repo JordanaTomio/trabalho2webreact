@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
@@ -9,13 +9,15 @@ import {Link, useNavigate} from "react-router-dom";
 import {
     Card,
     CardActions,
-    CardContent,
+    CardContent, FormControl, InputLabel, Select, TextField,
     Typography
 } from "@mui/material";
 import Tabela from "./Tabela"
+import StudentForm from "./Forms";
+import jsonData from "./exemplo.json";
 
 
-export default function Login(props) {
+export default function Login() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (index, event) => {
@@ -24,6 +26,46 @@ export default function Login(props) {
 
     const handleClose = () => {
         setAnchorEl(null);
+    };
+    const [tipo, setTipo] = React.useState('');
+    const [comentario, setComentario] = React.useState('');
+
+    const handleChangeTipo = (event) => {
+        setTipo(event.target.value);
+    };
+
+    const val = {
+        tipo,
+        comentario,
+    };
+
+    const handleChangeComentario = (event) => {
+        setComentario(event.target.value);
+    };
+
+    const resetar = () => {
+        setTipo('');
+        setComentario('');
+    };
+
+    const [studentData, setStudentData] = useState(jsonData);
+
+    const tableRows = studentData.map((info) => {
+        return (
+            <tr>
+                <td>{info.id}</td>
+                <td>{info.tipo}</td>
+                <td>{info.comentario}</td>
+            </tr>
+        );
+    });
+
+    const addRows = (data) => {
+        const totalStudents = val.length;
+        data.id = totalStudents + 1;
+        const updatedStudentData = [...studentData];
+        updatedStudentData.push(val);
+        setStudentData(updatedStudentData);
     };
 
     return (
@@ -81,8 +123,40 @@ export default function Login(props) {
                             <a>Tem alguma sugestão ou crítica? Manda pra gente!</a>
 
                             <div className="card-texto">
+                                <FormControl>
+                                    <InputLabel id="tipo-comentario-label">Tipo Comentario</InputLabel>
+                                    <Select
+                                        labelId="tipo-comentario-label"
+                                        id="tipo-comentario"
+                                        label={"Tipo Comentario"}
+                                        className="espacamento"
+                                        onChange={handleChangeTipo}
+                                    >
+                                        <MenuItem value={'critica'}>Critica</MenuItem>
+                                        <MenuItem value={'sugestao'}>Sugestao</MenuItem>
+                                        <MenuItem value={'elogio'}>Elogio</MenuItem>
+                                    </Select>
+
+                                    <TextField variant="outlined"
+                                               label={"Email"}
+                                               className="espacamento"
+                                    />
+
+                                    <TextField variant="outlined"
+                                               multiline
+                                               rows={10}
+                                               className="espacamento"
+                                               label={"Escreva seu comentário"}
+                                               onChange={handleChangeComentario}
+                                               value={comentario}
+                                    />
+
+                                </FormControl>
                             </div>
                         </CardContent>
+                        <CardActions>
+                            <Button size="small" onClick={resetar}>Enviar</Button>
+                        </CardActions>
                     </Card>
 
                     <Card variant="outlined" sx={{minWidth: 40}} className="card2">
@@ -91,11 +165,24 @@ export default function Login(props) {
                                 TABELA
                             </Typography>
 
-                            <Tabela></Tabela>
-w
+                            <div>
+                                <table className="table table-stripped">
+                                    <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Tipo</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>{tableRows}</tbody>
+                                </table>
+
+                                <br/>
+                            </div>
+
                         </CardContent>
                         <CardActions>
-                            <Button size="small">Learn More</Button>
+                            <Button size="small" onClick={addRows}>Atualizar</Button>
                         </CardActions>
                     </Card>
                 </div>
