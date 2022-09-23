@@ -137,11 +137,21 @@
   height: auto;
   display: inline-block;
   margin-top: 150px;
-  margin-left: 500px;
   padding: 100px;
 }
 
 .card2 {
   display: inline-block;
   padding: 10px;
+}
+
+.card-texto {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.espacamento{
+  margin: 12px 0px 8px !important;
 }

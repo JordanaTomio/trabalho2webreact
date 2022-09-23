@@ -1,4 +1,8 @@
+import Tabela from "./Tabela"
+import React from "react";
+
 function Notes() {
-    return (<h2>Notes</h2>)
+    return (<Tabela></Tabela>)
 }
+
 export default Notes;
