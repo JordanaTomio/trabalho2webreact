@@ -92,10 +92,26 @@
 }
 
 .logo {
-  display: inline-block;
+  display: flex;
   float: left;
-  width: 53px;
-  padding-top: 8px;
+  width: 60px;
+  padding-top: 10px;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.div-logo {
+  left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.complemento-area-estudante {
+  font-size: small;
+  margin-top: -30px;
 }
 
 .botao-cabecalho {
@@ -132,9 +148,9 @@
 .cards {
   height: auto;
   display: flex;
-  margin-top: 70px;
-  margin-left: 85px;
+  margin-top: -20px;
   padding: 100px;
+  justify-content: center;
 }
 
 .card-conteudo {
@@ -153,7 +169,8 @@
 }
 
 .espacamento{
-  margin: 7px 0px 5px !important;
+  display: flex;
+  margin: 7px 0px 3px !important;
 }
 
 table {
@@ -171,4 +188,12 @@ td {
 
 body {
   background-color: #D9D9D9;
+}
+
+a:active {
+  color: yellow;
+}
+
+.amarelo:active {
+  color: yellow;
 }

@@ -5,14 +5,14 @@ import {
     Link
 } from "react-router-dom";
 
-import Homepage from "./Homepage"
-import Register from "./Register"
-import Login from "./Login"
-import Profile from "./Profile"
-import Finances from "./Finances"
-import Notes from "./Notes"
-import Institutional from "./Institutional"
-import Courses from "./Courses"
+import Homepage from "./Telas/Homepage"
+import Register from "./Telas/Register"
+import Login from "./Telas/Login"
+import Profile from "./Telas/Profile"
+import Finances from "./Telas/Finances"
+import Notes from "./Telas/Notes"
+import Institutional from "./Telas/Institutional"
+import Courses from "./Telas/Courses"
 
 import React from 'react';
 

@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
-import {menuItems} from "./infoMenus";
+import {menuItems} from "../infoMenus";
 import {Link} from "react-router-dom";
 import {
     Card,
@@ -12,7 +12,8 @@ import {
     CardContent, FormControl, InputLabel, Select, TextField,
     Typography
 } from "@mui/material";
-import jsonData from "./exemplo.json";
+import jsonData from "../exemplo.json";
+import frub_logo from "../frub_logo.png"
 
 
 export default function Login() {
@@ -88,13 +89,18 @@ export default function Login() {
     return (
         <div>
             <div className="cabecalho">
-                <h2 className="logo">FRUB</h2>
+                <img src={frub_logo} alt="Logo" className="logo"/>
+
+                <div className="div-logo">
+                    <h2 className="logo">FRUB</h2>
+                    <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
+                </div>
+
                 <Toolbar className="toolbar">
                     {Object.keys(menuItems).map((item, index) => (
                         <div className="navButton" key={index}>
                             <Button color="inherit" onClick={(e) => handleClick(index, e)}>
                                 {item}
-                                <i className="fas fa-caret-down"/>
                             </Button>
                             <Menu
                                 anchorEl={anchorEl && anchorEl[index]}
@@ -112,7 +118,6 @@ export default function Login() {
                                         component={Link} to={menuitems.path}
                                     >
                                         {menuitems.title}
-
                                     </MenuItem>
                                 ))}
                             </Menu>
