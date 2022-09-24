@@ -5,15 +5,13 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import {menuItems} from "./infoMenus";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {
     Card,
     CardActions,
     CardContent, FormControl, InputLabel, Select, TextField,
     Typography
 } from "@mui/material";
-import Tabela from "./Tabela"
-import StudentForm from "./Forms";
 import jsonData from "./exemplo.json";
 
 
@@ -29,43 +27,49 @@ export default function Login() {
     };
     const [tipo, setTipo] = React.useState('');
     const [comentario, setComentario] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [errors, setErrors] = React.useState('');
+    const [dadosUsuario, setDadosUsuario] = useState(jsonData);
 
     const handleChangeTipo = (event) => {
         setTipo(event.target.value);
     };
 
-    const val = {
-        tipo,
-        comentario,
+    const handleChangeEmail = (event) => {
+        setEmail(event.target.value);
     };
 
     const handleChangeComentario = (event) => {
         setComentario(event.target.value);
     };
 
-    const resetar = () => {
-        setTipo('');
-        setComentario('');
+    const objetoTabela = {
+        tipo,
+        comentario,
     };
 
-    const [studentData, setStudentData] = useState(jsonData);
-
-    const tableRows = studentData.map((info) => {
+    const tableRows = dadosUsuario.map((info) => {
         return (
             <tr>
-                <td>{info.id}</td>
                 <td>{info.tipo}</td>
                 <td>{info.comentario}</td>
             </tr>
         );
     });
 
-    const addRows = (data) => {
-        const totalStudents = val.length;
-        data.id = totalStudents + 1;
-        const updatedStudentData = [...studentData];
-        updatedStudentData.push(val);
-        setStudentData(updatedStudentData);
+    const addRows = () => {
+        if (email.length < 4 || tipo.length < 4 || comentario.length < 4) {
+            setErrors("por favor, preencha todos os campos")
+        } else {
+            setErrors('')
+            const dadosParaInserir = [...dadosUsuario];
+            dadosParaInserir.push(objetoTabela);
+            setDadosUsuario(dadosParaInserir);
+
+            setTipo('');
+            setComentario('');
+            setEmail('')
+        }
     };
 
     return (
@@ -130,6 +134,8 @@ export default function Login() {
                                         id="tipo-comentario"
                                         label={"Tipo Comentario"}
                                         className="espacamento"
+                                        error={errors}
+                                        helperText={errors}
                                         onChange={handleChangeTipo}
                                     >
                                         <MenuItem value={'critica'}>Critica</MenuItem>
@@ -140,6 +146,10 @@ export default function Login() {
                                     <TextField variant="outlined"
                                                label={"Email"}
                                                className="espacamento"
+                                               onChange={handleChangeEmail}
+                                               value={email}
+                                               error={errors}
+                                               helperText={errors}
                                     />
 
                                     <TextField variant="outlined"
@@ -149,13 +159,15 @@ export default function Login() {
                                                label={"Escreva seu comentário"}
                                                onChange={handleChangeComentario}
                                                value={comentario}
+                                               error={errors}
+                                               helperText={errors}
                                     />
 
                                 </FormControl>
                             </div>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" onClick={resetar}>Enviar</Button>
+                            <Button size="small" onClick={addRows}>Enviar</Button>
                         </CardActions>
                     </Card>
 
@@ -169,7 +181,6 @@ export default function Login() {
                                 <table className="table table-stripped">
                                     <thead>
                                     <tr>
-                                        <th>Codigo</th>
                                         <th>Tipo</th>
                                         <th>Comentario</th>
                                     </tr>
@@ -179,11 +190,7 @@ export default function Login() {
 
                                 <br/>
                             </div>
-
                         </CardContent>
-                        <CardActions>
-                            <Button size="small" onClick={addRows}>Atualizar</Button>
-                        </CardActions>
                     </Card>
                 </div>
 
