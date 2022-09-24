@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     BrowserRouter as Router,
     Routes,
@@ -14,6 +13,8 @@ import Finances from "./Finances"
 import Notes from "./Notes"
 import Institutional from "./Institutional"
 import Courses from "./Courses"
+
+import React from 'react';
 
 import './App.css';
 
