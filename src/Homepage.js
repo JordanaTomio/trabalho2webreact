@@ -1,7 +1,7 @@
 import {Link, TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Homepage() {
     const navigate = useNavigate();
