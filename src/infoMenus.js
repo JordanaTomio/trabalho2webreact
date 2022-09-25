@@ -13,7 +13,7 @@ export const menuItems = {
     ],
     graduações: [
         {
-            title: "Todas os cursos",
+            title: "Todos os cursos",
             path: "/courses",
         }
     ],
