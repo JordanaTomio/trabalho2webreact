@@ -14,18 +14,10 @@ import {
 } from "@mui/material";
 import jsonData from "../exemplo.json";
 import frub_logo from "../frub_logo.png"
-
+import Cabecalho from "./Cabecalho";
 
 export default function Login() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = (index, event) => {
-        setAnchorEl({[index]: event.currentTarget});
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
     const [tipo, setTipo] = React.useState('');
     const [comentario, setComentario] = React.useState('');
     const [assunto, setAssunto] = useState('');
@@ -88,42 +80,7 @@ export default function Login() {
 
     return (
         <div>
-            <div className="cabecalho">
-                <img src={frub_logo} alt="Logo" className="logo"/>
-
-                <div className="div-logo">
-                    <h2 className="logo">FRUB</h2>
-                    <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
-                </div>
-
-                <Toolbar className="toolbar">
-                    {Object.keys(menuItems).map((item, index) => (
-                        <div className="navButton" key={index}>
-                            <Button color="inherit" onClick={(e) => handleClick(index, e)}>
-                                {item}
-                            </Button>
-                            <Menu
-                                anchorEl={anchorEl && anchorEl[index]}
-                                keepMounted
-                                open={anchorEl && Boolean(anchorEl[index])}
-                                onClose={handleClose}
-                                getContentAnchorEl={null}
-                                anchorOrigin={{vertical: "bottom", horizontal: "center"}}
-                                transformOrigin={{vertical: "top", horizontal: "center"}}
-                            >
-                                {menuItems[item].map((menuitems, menuindex) => (
-                                    <MenuItem
-                                        key={menuindex}
-                                        selected={menuitems === item}
-                                        component={Link} to={menuitems.path}
-                                    >
-                                        {menuitems.title}
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </div>
-                    ))}
-                </Toolbar>
+            <Cabecalho></Cabecalho>
 
                 <div className="cards">
                     <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
@@ -233,8 +190,6 @@ export default function Login() {
                     </Card>
                 </div>
 
-
-            </div>
             <div className="rodape"> Alunos: Elizabeth, Jordana e Ueran.</div>
         </div>
     );

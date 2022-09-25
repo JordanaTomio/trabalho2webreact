@@ -195,11 +195,6 @@ a:active {
   color: yellow;
 }
 
-.amarelo:active {
-  color: yellow;
-}
-
-
 Button {
   padding: 7px;
   border: none;
@@ -251,5 +246,5 @@ a:hover {
   display: inline-block;
   width: 60px;
   margin-top: 1px; 
-  text-align: "center";
+  text-align: center;
 }
