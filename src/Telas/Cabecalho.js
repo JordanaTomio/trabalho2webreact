@@ -4,8 +4,9 @@ import {menuItems} from "../infoMenus";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import React from "react";
+import {Link as Link2} from "@mui/material";
 
 function Cabecalho() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,16 +19,27 @@ function Cabecalho() {
         setAnchorEl(null);
     };
 
+    const navigate = useNavigate();
+
+    const registrar = () => {
+        navigate("/register");
+    }
+
     return (
         <div className="cabecalho">
-            <img src={frub_logo} alt="Logo" className="logo"/>
-
-            <div className="div-logo">
-                <h2 className="logo">FRUB</h2>
-                <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
-            </div>
 
             <Toolbar className="toolbar">
+
+                <a href="/login">
+                    <img src={frub_logo} alt="Logo" className="logo"/>
+                </a>
+
+                <div className="div-logo">
+                    <h2 className="logo">FRUB</h2>
+                    <br/>
+                    <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
+                </div>
+
                 {Object.keys(menuItems).map((item, index) => (
                     <div className="navButton" key={index}>
                         <Button color="inherit" onClick={(e) => handleClick(index, e)}>
@@ -55,7 +67,8 @@ function Cabecalho() {
                     </div>
                 ))}
             </Toolbar>
-        </div>)
+        </div>
+)
 }
 
 export default Cabecalho;

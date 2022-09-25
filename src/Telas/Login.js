@@ -1,19 +1,8 @@
 import React, {useState} from "react";
-
 import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import Toolbar from "@material-ui/core/Toolbar";
-import {menuItems} from "../infoMenus";
-import {Link} from "react-router-dom";
-import {
-    Card,
-    CardActions,
-    CardContent, FormControl, InputLabel, Select, TextField,
-    Typography
-} from "@mui/material";
+import {Card, CardActions, CardContent, FormControl, InputLabel, Select, TextField, Typography} from "@mui/material";
 import jsonData from "../exemplo.json";
-import frub_logo from "../frub_logo.png"
 import Cabecalho from "./Cabecalho";
 
 export default function Login() {
@@ -81,25 +70,24 @@ export default function Login() {
     return (
         <div>
             <Cabecalho></Cabecalho>
-
                 <div className="cards">
                     <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
                         <CardContent>
                             <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
                                 BOAS VINDAS
                             </Typography>
-                            <a>Aluno, seja bem-vindo ao seu espaço do estudante! <br></br>
+                            <Typography>Aluno, seja bem-vindo ao seu espaço do estudante! <br></br>
                                 Aqui você pode encontrar vários recursos úteis para sua graduação.
-                            </a>
+                            </Typography>
                         </CardContent>
                     </Card>
 
-                    <Card variant="outlined" sx={{minWidth: 50}} className="card-conteudo">
+                    <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
                         <CardContent>
                             <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
                                 FORMULARIO
                             </Typography>
-                            <a>Tem alguma sugestão ou crítica? Manda pra gente!</a>
+                            <Typography>Tem alguma sugestão ou crítica? Manda pra gente!</Typography>
 
                             <div className="card-texto">
                                 <FormControl>
@@ -169,7 +157,7 @@ export default function Login() {
                                 TABELA
                             </Typography>
 
-                            <a>Aqui você pode acompanhar seu hisórico de comentários.</a>
+                            <Typography>Aqui você pode acompanhar seu hisórico de comentários.</Typography>
                             <br></br>
 
                             <div>

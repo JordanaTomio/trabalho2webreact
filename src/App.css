@@ -96,13 +96,14 @@
   display: flex;
   float: left;
   width: 60px;
-  padding-top: 10px;
+  padding-top: -10px;
+  padding-right: 5px;
   flex-direction: column;
-  margin-top: 0;
+  margin-top: -30px;
 }
 
 .div-logo {
-  left: 0;
+  left: -10px;
   padding-left: 0;
   display: flex;
   flex-direction: column;
@@ -113,6 +114,7 @@
 .complemento-area-estudante {
   font-size: small;
   margin-top: -30px;
+  padding-top: 10px;
 }
 
 .botao-cabecalho {
@@ -128,7 +130,7 @@
 }
 
 .toolbar {
-  position: fixed !important;
+  position: fixed;
   top: 0 ;
   left: 0 ;
   width: 100% ;
@@ -149,7 +151,7 @@
 .cards {
   height: auto;
   display: flex;
-  margin-top: -20px;
+  margin-top: 60px;
   padding: 100px;
   justify-content: center;
 }
@@ -191,10 +193,6 @@ body {
   background-color: #D9D9D9;
 }
 
-a:active {
-  color: yellow;
-}
-
 Button {
   padding: 7px;
   border: none;
@@ -215,7 +213,7 @@ a {
 
 a:link { 
   text-decoration: none;
-} 
+}
 
 a:hover {
   color: #4285F4;
