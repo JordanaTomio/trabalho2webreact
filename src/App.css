@@ -90,6 +90,7 @@
   height: 85px;
   vertical-align: middle;
   background-color: #C5A4A1;
+  z-index: 9;
 }
 
 .logo {
