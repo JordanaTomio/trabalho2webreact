@@ -35,7 +35,7 @@ function Cabecalho() {
                 </a>
 
                 <div className="div-logo">
-                    <h2 className="logo">FRUB</h2>
+                    <h2 className="titulo-logo">FRUB</h2>
                     <br/>
                     <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
                 </div>

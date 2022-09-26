@@ -246,3 +246,28 @@ a:hover {
   margin-top: 1px; 
   text-align: center;
 }
+
+.titulo-logo {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 0%;
+  letter-spacing: 0.12em;
+  margin-top: -3px;
+  color:#000000;
+  }
+
+  .complemento-area-estudante {
+    font-size: small;
+    margin-top: -30px;
+    padding-top: 4px;
+    font-family: 'Gluten';
+    font-style: normal;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-left: 3px;
+    color: #2F2E2F;
+  }
