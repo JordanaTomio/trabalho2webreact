@@ -104,8 +104,8 @@ export default function Login() {
                                         required
                                     >
                                         <MenuItem value=""><em>None</em></MenuItem>
-                                        <MenuItem value={'critica'}>Critica</MenuItem>
-                                        <MenuItem value={'sugestao'}>Sugestao</MenuItem>
+                                        <MenuItem value={'critica'}>Crítica</MenuItem>
+                                        <MenuItem value={'sugestao'}>Sugestão</MenuItem>
                                         <MenuItem value={'elogio'}>Elogio</MenuItem>
                                     </Select>
 
