@@ -127,6 +127,9 @@
   margin: auto;
   text-align: center;
   align-items: center;
+  margin-left: 70px;
+  margin-right: 1px;
+  margin-top: 35px;
 }
 
 .toolbar {
@@ -270,4 +273,11 @@ a:hover {
     letter-spacing: 0.05em;
     margin-left: 3px;
     color: #2F2E2F;
+  }
+  
+  .barra-pesquisa {
+    margin-left: 1060px;
+    margin-top: -102px;
+    width: 1000px;
+    height: 1000px;
   }
