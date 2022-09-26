@@ -73,10 +73,10 @@ export default function Login() {
                 <div className="cards">
                     <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
                         <CardContent>
-                            <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
-                                BOAS VINDAS
+                            <Typography sx={{fontSize: 20}} color="text.secondary" gutterBottom>
+                                <b>Bem-vindo, aluno XXX!</b>
                             </Typography>
-                            <Typography>Aluno, seja bem-vindo ao seu espaço do estudante! <br></br>
+                            <Typography>Seja bem-vindo ao seu espaço do estudante! <br></br>
                                 Aqui você pode encontrar vários recursos úteis para sua graduação.
                             </Typography>
                         </CardContent>
@@ -84,14 +84,14 @@ export default function Login() {
 
                     <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
                         <CardContent>
-                            <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
-                                FORMULARIO
+                            <Typography sx={{fontSize: 20}} color="text.secondary" gutterBottom>
+                                <b>Ouvidoria</b>
                             </Typography>
                             <Typography>Tem alguma sugestão ou crítica? Manda pra gente!</Typography>
 
                             <div className="card-texto">
                                 <FormControl>
-                                    <InputLabel id="tipo-comentario-label">Tipo Comentario*</InputLabel>
+                                    <InputLabel id="tipo-comentario-label">Tipo de Comentário*</InputLabel>
                                     <Select
                                         labelId="tipo-comentario-label"
                                         id="tipo-comentario"
@@ -153,11 +153,11 @@ export default function Login() {
                     <Card variant="outlined" sx={{minWidth: 40}} className="card-conteudo">
                         <CardContent>
 
-                            <Typography sx={{fontSize: 14}} color="text.secondary" >
-                                TABELA
+                            <Typography sx={{fontSize: 20}} color="text.secondary" >
+                                <b>Tabela</b>
                             </Typography>
 
-                            <Typography>Aqui você pode acompanhar seu hisórico de comentários.</Typography>
+                            <Typography>Aqui você pode acompanhar seu histórico de comentários.</Typography>
                             <br></br>
 
                             <div>
