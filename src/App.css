@@ -145,11 +145,12 @@
 .rodape {
   position: fixed;
   left: 0px;
-  top: 700px;
+  top: 660px;
   right: 0px;
   height: 60px;
   text-align: right; 
   background-color: #C5A4A1;
+  padding-top: 15px;
 }
 
 .cards {
@@ -159,6 +160,7 @@
   padding: 100px;
   justify-content: center;
   overflow-x: hidden;
+  margin-bottom: 35px;
 }
 
 .card-conteudo {

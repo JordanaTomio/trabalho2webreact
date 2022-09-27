@@ -7,7 +7,7 @@ function Courses() {
         <div>
             <Cabecalho></Cabecalho>
             <div className="card" style={{ marginTop: "120px"}}>
-                    <Card variant="outlined" sx={{maxHeight: 440}} className="card2">
+                    <Card variant="outlined" sx={{maxHeight: 460}} className="card2">
                         <CardContent>
                             <Typography sx={{fontSize: 18}} color="text.secondary" gutterBottom>
                                 Cursos de graduação oferecidos
