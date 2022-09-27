@@ -145,7 +145,7 @@
 .rodape {
   position: fixed;
   left: 0px;
-  top: 660px;
+  top: 590px;
   right: 0px;
   height: 60px;
   text-align: right; 
@@ -160,7 +160,7 @@
   padding: 100px;
   justify-content: center;
   overflow-x: hidden;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
 }
 
 .card-conteudo {
@@ -310,6 +310,7 @@ a:hover {
   .cardNotas {
     display: inline-block;
     padding-right: 37px;
+    margin-top: -80px;
   }
 
   .cardInstitucional {
@@ -317,6 +318,7 @@ a:hover {
     padding: 10px;
     margin-right: 10px;
     width: 47%;
+    margin-top: -25px;
   }
   
   .imagemInstitucional {
