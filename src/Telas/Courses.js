@@ -52,7 +52,7 @@ function Courses() {
 
                 </div>
 
-            <div className="rodape"><p>Alunos: Elizabeth Junkes, Jordana Tomio e Ueran Piazza.</p></div>
+            <div className="rodape"><p style={{marginTop: "0.2px"}}>Alunos: Elizabeth Junkes, Jordana Tomio e Ueran Piazza.</p></div>
         </div>
     );
 
