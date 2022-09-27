@@ -145,10 +145,10 @@
 .rodape {
   position: fixed;
   left: 0px;
-  top: 600px;
+  top: 700px;
   right: 0px;
   height: 60px;
-  text-align: right;
+  text-align: right; 
   background-color: #C5A4A1;
 }
 
@@ -285,4 +285,91 @@ a:hover {
     margin-top: -102px;
     width: 1000px;
     height: 1000px;
+  }
+  
+  .noteCabecalho {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 85px;
+    vertical-align: middle;
+    background-color: #C5A4A1;
+  }
+
+  .cardProfile {
+    height: auto;
+    display: flex;
+    margin-top: 5px;
+    padding: 100px;
+    justify-content: center;
+  }
+
+  .cardNotas {
+    display: inline-block;
+    padding-right: 37px;
+  }
+
+  .cardInstitucional {
+    display: flexbox;
+    padding: 10px;
+    margin-right: 10px;
+    width: 47%;
+  }
+  
+  .imagemInstitucional {
+    display: flex;
+    float: left;
+  }
+  
+  .cardInstitucional1 {
+    height: auto;
+    display: inline-flex;
+    margin-top: 150px;
+    padding: 100px;
+  }
+  
+  .cardProfile {
+    height: auto;
+    display: flex;
+    padding: 100px;
+    margin-top: 70px;
+    justify-content: center;
+  }
+  
+  .textoImagemPerfil {
+    display: flex;
+    justify-content: right;
+    width: 83%;
+  }
+  
+  .imagemPerfil {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-top: -255px;
+    margin-left: 305px;
+    margin-bottom: 90px;
+  }
+
+  .imagemDoPerfil {
+    border-radius: 50%;
+  }
+
+  .table2 {
+    max-width: 200px;
+  }
+
+  .cabecalho2 {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 85px;
+    vertical-align: middle;
+    background-color: #C5A4A1;
+  }
+
+  .textoDetalhesUsuario {
+    margin-left: 10px;
   }
