@@ -13,11 +13,15 @@ import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LockIcon from '@mui/icons-material/Lock';
 
+const isLoggedIn = false;
+
 function Homepage() {
     const navigate = useNavigate();
     const [email, setEmail] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [errors, setErrors] = React.useState('');
+    const [isLoggedIn, setisLoggedIn] = React.useState(false);
+
 
     const handleChangeEmail = (event) => {
         setEmail(event.target.value);
@@ -31,10 +35,17 @@ function Homepage() {
         navigate("/register");
     }
 
+    localStorage.setItem("isLog", "false");
+
     const logar = () => {
+        console.log("logado:" + localStorage.getItem("isLog"))
+
         if (email.length > 0 && senha.length > 0) {
+            console.log("fazendo login...")
+
             setErrors('');
-            navigate("/login");
+            localStorage.setItem("isLog", "true");
+            navigate("/login")
         } else {
             setErrors("por favor, preencha todos os campos")
         }
@@ -127,4 +138,4 @@ function Homepage() {
 
 }
 
-export default Homepage;
+export {Homepage, isLoggedIn};
