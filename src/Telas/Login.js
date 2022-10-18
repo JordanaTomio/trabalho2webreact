@@ -178,7 +178,7 @@ export default function Login() {
                     </Card>
                 </div>
 
-            <div className="rodape"> Alunos: Elizabeth, Jordana e Ueran.</div>
+            <div className="rodape">Alunos: Elizabeth Junkes, Jordana Tomio e Ueran Piazza.</div>
         </div>
     );
 }

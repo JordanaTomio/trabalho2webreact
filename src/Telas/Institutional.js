@@ -37,7 +37,7 @@ function Institutional() {
                         </CardContent>
                     </Card>
                 </div>
-            <div className="rodape"><p style={{ marginBottom: "5px"}}>Alunos: Elizabeth Junkes, Jordana Tomio e Ueran Piazza.</p></div>
+            <div className="rodape"><p style={{marginTop: "0.2px"}}>Alunos: Elizabeth Junkes, Jordana Tomio e Ueran Piazza.</p></div>
         </div>
     );
 
