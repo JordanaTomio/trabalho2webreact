@@ -1,31 +1,31 @@
 export const menuItems = {
     matérias: [
         {
-            title: "Notas",
+            title: "notes",
             path: "/notes",
         },
     ],
     financeiro: [
         {
-            title: "Boletos",
+            title: "finances",
             path: "/finances",
         }
     ],
     graduações: [
         {
-            title: "Todos os cursos",
+            title: "courses",
             path: "/courses",
         }
     ],
     institucional: [
         {
-            title: "Sobre a FRUB",
+            title: "institutional",
             path: "/institutional",
         }
     ],
     perfil: [
         {
-            title: "Editar",
+            title: "profile",
             path: "/profile",
         }
     ],

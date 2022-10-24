@@ -8,25 +8,25 @@ import {Link, useNavigate} from "react-router-dom";
 import React from "react";
 import {Link as Link2} from "@mui/material";
 
-import { styled, alpha } from '@mui/material/styles';
+import {styled, alpha} from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
 function Cabecalho() {
 
-    const Search = styled('div')(({ theme }) => ({
+    const Search = styled('div')(({theme}) => ({
         position: 'relative',
-        borderRadius: theme.shape.borderRadius,   
+        borderRadius: theme.shape.borderRadius,
         marginLeft: 100,
         width: '20%',
         [theme.breakpoints.up('sm')]: {
-          marginLeft: theme.spacing(1),
-          width: 'auto',
+            marginLeft: theme.spacing(1),
+            width: 'auto',
         },
-      }));
-      
-      const SearchIconWrapper = styled('div')(({ theme }) => ({
+    }));
+
+    const SearchIconWrapper = styled('div')(({theme}) => ({
         padding: theme.spacing(0, 2),
         height: '100%',
         position: 'absolute',
@@ -34,19 +34,19 @@ function Cabecalho() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-      }));
-      
-      const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    }));
+
+    const StyledInputBase = styled(InputBase)(({theme}) => ({
         color: 'inherit',
         '& .MuiInputBase-input': {
-          padding: theme.spacing(1, 1, 1, 0),
-          paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-          width: '100%',
-          [theme.breakpoints.up('sm')]: {
-            width: '18ch',
-          },
+            padding: theme.spacing(1, 1, 1, 0),
+            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+            width: '100%',
+            [theme.breakpoints.up('sm')]: {
+                width: '18ch',
+            },
         },
-      }));      
+    }));
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -63,6 +63,26 @@ function Cabecalho() {
     const registrar = () => {
         navigate("/register");
     }
+
+    function DeixarNegrito({children}) {
+        const url = [...window.location.href.split('/')];
+        console.log('objeto' + ' ' + children);
+
+        console.log('url' + ' ' + url[3])
+
+        for (const [title, path] of Object.entries(children)) {
+            console.log('path' + ' ' + path);
+
+            if (path === url[3]) {
+                console.log('xiii');
+
+                return <span style={{fontWeight: 'bold'}}>{url[3]}</span>;
+            } else {
+                return children
+            }
+        }
+    }
+
 
     return (
         <div className="cabecalho">
@@ -99,7 +119,7 @@ function Cabecalho() {
                                     selected={menuitems === item}
                                     component={Link} to={menuitems.path}
                                 >
-                                    {menuitems.title}
+                                    <DeixarNegrito children={item}>{menuitems.title} </DeixarNegrito>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -108,21 +128,21 @@ function Cabecalho() {
             </Toolbar>
 
             <div className="barra-pesquisa">
-            <Toolbar>
-                <Search sx={{background: 'white'}}>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Pesquisar página…"
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
-            </Toolbar>
+                <Toolbar>
+                    <Search sx={{background: 'white'}}>
+                        <SearchIconWrapper>
+                            <SearchIcon/>
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Pesquisar página…"
+                            inputProps={{'aria-label': 'search'}}
+                        />
+                    </Search>
+                </Toolbar>
             </div>
-            
+
         </div>
-)
+    )
 
 }
 
