@@ -22,7 +22,6 @@ function Homepage() {
     const [errors, setErrors] = React.useState('');
     const [isLoggedIn, setisLoggedIn] = React.useState(false);
 
-
     const handleChangeEmail = (event) => {
         setEmail(event.target.value);
     };
@@ -37,15 +36,20 @@ function Homepage() {
 
     localStorage.setItem("isLog", "false");
 
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     const logar = () => {
         console.log("logado:" + localStorage.getItem("isLog"))
 
-        if (email.length > 0 && senha.length > 0) {
+        if (email.length > 0 && senha.length > 0 && validateEmail(email)) {
             console.log("fazendo login...")
 
             setErrors('');
             localStorage.setItem("isLog", "true");
-            navigate("/login")
+            navigate("/menus")
         } else {
             setErrors("por favor, preencha todos os campos")
         }
@@ -65,50 +69,50 @@ function Homepage() {
                 </div>
 
                 <TextField className="input"
-                    margin="normal"
-                    size="normal"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email"
-                    name="email"
-                    autoComplete="email"
-                    autoFocus
-                    variant={"filled"}
-                    placeholder="email@email.com"
-                    value={email}
-                    error={errors}
-                    helperText={errors}
-                    onChange={handleChangeEmail}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <AccountCircle />
-                            </InputAdornment>
-                        ),
-                    }} />
+                           margin="normal"
+                           size="normal"
+                           required
+                           fullWidth
+                           id="email"
+                           label="Email"
+                           name="email"
+                           autoComplete="email"
+                           autoFocus
+                           variant={"filled"}
+                           placeholder="email@email.com"
+                           value={email}
+                           error={errors}
+                           helperText={errors}
+                           onChange={handleChangeEmail}
+                           InputProps={{
+                               startAdornment: (
+                                   <InputAdornment position="start">
+                                       <AccountCircle />
+                                   </InputAdornment>
+                               ),
+                           }} />
 
                 <TextField className="input"
-                    marginTop="15px"
-                    required
-                    fullWidth
-                    name="senha"
-                    label="Senha"
-                    type="senha"
-                    id="senha"
-                    variant={"filled"}
-                    placeholder="******"
-                    value={senha}
-                    onChange={handleChangeSenha}
-                    error={errors}
-                    helperText={errors}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <LockIcon />
-                            </InputAdornment>
-                        ),
-                    }} />
+                           marginTop="15px"
+                           required
+                           fullWidth
+                           name="senha"
+                           label="Senha"
+                           type="password"
+                           id="senha"
+                           variant={"filled"}
+                           placeholder="******"
+                           value={senha}
+                           onChange={handleChangeSenha}
+                           error={errors}
+                           helperText={errors}
+                           InputProps={{
+                               startAdornment: (
+                                   <InputAdornment position="start">
+                                       <LockIcon />
+                                   </InputAdornment>
+                               ),
+                           }} />
 
                 <Button
                     style={{margin: "10px"}}
@@ -127,13 +131,13 @@ function Homepage() {
             </div>
         </div>
 
-        <div className="split right">
-        <div className="centered">
-            <img src={imagem_trabalho} className="image" />
-        </div>
-        </div></>
-        
-    
+            <div className="split right">
+                <div className="centered">
+                    <img src={imagem_trabalho} className="image" />
+                </div>
+            </div></>
+
+
     );
 
 }

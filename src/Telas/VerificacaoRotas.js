@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export const VerificacaoRotas = ({ children }) => {
     let estaLogado = localStorage.getItem("isLog")

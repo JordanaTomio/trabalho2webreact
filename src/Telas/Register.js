@@ -28,10 +28,17 @@ function Register() {
     const logar = () => {
         navigate("/");
     }
+
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     const registrar = () => {
-        if (email.length > 0 && senha.length > 0 && nome.length > 0) {
+        if (email.length > 0 && senha.length > 0 && nome.length > 0 && validateEmail(email)) {
             setErrors('');
-            navigate("/login");
+            localStorage.setItem("isLog", "true");
+            navigate("/menus");
         } else {
             setErrors("por favor, preencha todos os campos")
         }
@@ -39,68 +46,68 @@ function Register() {
 
     return (
         <>
-            <body>
-                <div class="container">
-                    <div class="imagem"><img src="./imagemRegistro.png"></img></div>
-                    <div class="cadastro">
-                        <img link=""></img>
-                        <h1>Cadastre-se</h1>
-                        <p>Já possui conta?
-                            <Link href={"/"} onClick={logar}>
-                                Clique aqui
-                            </Link>
-                        </p>
-                        <TextField
-                            margin="normal"
-                            required
-                            id="email"
-                            label="Email"
-                            name="email"
-                            autoComplete="email"
-                            autoFocus
-                            variant={"filled"}
-                            value={email}
-                            onChange={handleChangeEmail}
-                            error={errors}
-                            helperText={errors}
-                        />
-                        <br />
-                        <TextField
-                            margin="normal"
-                            required
-                            name="nome"
-                            label="Nome"
-                            type="nome"
-                            id="nome"
-                            value={nome}
-                            variant={"filled"}
-                            onChange={handleChangeNome}
-                            error={errors}
-                            helperText={errors}
-                        />
-                        <br />
-                        <TextField
-                            margin="normal"
-                            required
-                            name="senha"
-                            label="Senha"
-                            type="senha"
-                            id="senha"
-                            value={senha}
-                            variant={"filled"}
-                            onChange={handleChangeSenha}
-                            error={errors}
-                            helperText={errors}
-                        />
-                        <br />
-                        <Button
-                            variant="contained"
-                            size={"large"}
-                            endIcon={<ArrowForwardIcon />}
-                            onClick={registrar}
-                        >Cadastrar</Button>
-                    </div>
+            <body class="container-register-main">
+            <div class="container-register">
+                <div class="imagem-register"><img src="./imagemRegistro.webp"></img></div>
+                <div class="cadastro-register">
+                    <img link=""></img>
+                    <h1>Cadastre-se</h1>
+                    <p>Já possui conta?
+                        <Link href={"/"} onClick={logar}>
+                            Clique aqui
+                        </Link>
+                    </p>
+                    <TextField
+                        margin="normal"
+                        required
+                        id="email"
+                        label="Email"
+                        name="email"
+                        autoComplete="email"
+                        autoFocus
+                        variant={"filled"}
+                        value={email}
+                        onChange={handleChangeEmail}
+                        error={errors}
+                        helperText={errors}
+                    />
+                    <br />
+                    <TextField
+                        margin="normal"
+                        required
+                        name="nome"
+                        label="Nome"
+                        type="nome"
+                        id="nome"
+                        value={nome}
+                        variant={"filled"}
+                        onChange={handleChangeNome}
+                        error={errors}
+                        helperText={errors}
+                    />
+                    <br />
+                    <TextField
+                        margin="normal"
+                        required
+                        name="senha"
+                        label="Senha"
+                        type="password"
+                        id="senha"
+                        value={senha}
+                        variant={"filled"}
+                        onChange={handleChangeSenha}
+                        error={errors}
+                        helperText={errors}
+                    />
+                    <br />
+                    <Button
+                        variant="contained"
+                        size={"large"}
+                        endIcon={<ArrowForwardIcon />}
+                        onClick={registrar}
+                    >Cadastrar</Button>
                 </div>
+            </div>
             </body>
         </>
     );

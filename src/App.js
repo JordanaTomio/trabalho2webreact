@@ -1,12 +1,11 @@
 import {
     BrowserRouter as Router,
     Routes,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 import Register from "./Telas/Register"
-import Login from "./Telas/Login"
+import Menus from "./Telas/Menus"
 import Profile from "./Telas/Profile"
 import Finances from "./Telas/Finances"
 import Notes from "./Telas/Notes"
@@ -20,7 +19,6 @@ import {VerificacaoRotas} from "./Telas/VerificacaoRotas";
 import {Homepage} from "./Telas/Homepage";
 import {TimeoutSessao} from "./Telas/TimeoutSessao";
 
-const login = localStorage.getItem("isLog");
 
 function App() {
     return (
@@ -30,20 +28,20 @@ function App() {
                     <Route exact path="/" element={<Homepage />} />
                     <Route path="/register" element={<Register />} />
                     <Route
-                        path="/login"
+                        path="/menus"
                         element={
                             <VerificacaoRotas>
                                 <TimeoutSessao>
-                                    <Login />
+                                    <Menus />
                                 </TimeoutSessao>
                             </VerificacaoRotas>
                         }
                     />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/finances" element={<Finances />} />
-                    <Route path="/notes" element={<Notes />} />
-                    <Route path="/institutional" element={<Institutional />} />
-                    <Route path="/courses" element={<Courses />} />
+                    <Route path="/perfil" element={<Profile />} />
+                    <Route path="/financeiro" element={<Finances />} />
+                    <Route path="/notas" element={<Notes />} />
+                    <Route path="/institucional" element={<Institutional />} />
+                    <Route path="/cursos" element={<Courses />} />
                 </Routes>
             </Router>
         </>

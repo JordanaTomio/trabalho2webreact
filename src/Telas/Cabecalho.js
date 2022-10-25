@@ -6,9 +6,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import {Link, useNavigate} from "react-router-dom";
 import React from "react";
-import {Link as Link2} from "@mui/material";
 
-import {styled, alpha} from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -60,23 +59,13 @@ function Cabecalho() {
 
     const navigate = useNavigate();
 
-    const registrar = () => {
-        navigate("/register");
-    }
-
     function DeixarNegrito({children}) {
         const url = [...window.location.href.split('/')];
-        console.log('objeto' + ' ' + children);
-
-        console.log('url' + ' ' + url[3])
 
         for (const [title, path] of Object.entries(children)) {
-            console.log('path' + ' ' + path);
 
             if (path === url[3]) {
-                console.log('xiii');
-
-                return <span style={{fontWeight: 'bold'}}>{url[3]}</span>;
+                return <span style={{fontWeight: 'bold',  textTransform: 'uppercase'}}>{url[3]}</span>;
             } else {
                 return children
             }
@@ -89,13 +78,12 @@ function Cabecalho() {
 
             <Toolbar className="toolbar">
 
-                <a href="/login">
+                <a href="/menus">
                     <img src={frub_logo} alt="Logo" className="logo"/>
                 </a>
 
                 <div className="div-logo">
                     <h2 className="titulo-logo">FRUB</h2>
-                    <br/>
                     <h3 className="logo complemento-area-estudante">Área do Estudante</h3>
                 </div>
 
@@ -118,6 +106,7 @@ function Cabecalho() {
                                     key={menuindex}
                                     selected={menuitems === item}
                                     component={Link} to={menuitems.path}
+                                    sx={{textTransform: 'uppercase'}}
                                 >
                                     <DeixarNegrito children={item}>{menuitems.title} </DeixarNegrito>
                                 </MenuItem>

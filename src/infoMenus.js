@@ -1,32 +1,32 @@
 export const menuItems = {
     matérias: [
         {
-            title: "notes",
-            path: "/notes",
+            title: "notas",
+            path: "/notas",
         },
     ],
     financeiro: [
         {
-            title: "finances",
-            path: "/finances",
+            title: "financeiro",
+            path: "/financeiro",
         }
     ],
     graduações: [
         {
-            title: "courses",
-            path: "/courses",
+            title: "cursos",
+            path: "/cursos",
         }
     ],
     institucional: [
         {
-            title: "institutional",
-            path: "/institutional",
+            title: "institucional",
+            path: "/institucional",
         }
     ],
     perfil: [
         {
-            title: "profile",
-            path: "/profile",
+            title: "perfil",
+            path: "/perfil",
         }
     ],
 };
