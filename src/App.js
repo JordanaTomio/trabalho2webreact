@@ -25,23 +25,43 @@ function App() {
         <>
             <Router>
                 <Routes>
-                    <Route exact path="/" element={<Homepage />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route exact path="/" element={<Homepage/>}/>
+                    <Route path="/register" element={<Register/>}/>
                     <Route
                         path="/menus"
                         element={
                             <VerificacaoRotas>
                                 <TimeoutSessao>
-                                    <Menus />
+                                    <Menus/>
                                 </TimeoutSessao>
                             </VerificacaoRotas>
                         }
                     />
-                    <Route path="/perfil" element={<Profile />} />
-                    <Route path="/financeiro" element={<Finances />} />
-                    <Route path="/notas" element={<Notes />} />
-                    <Route path="/institucional" element={<Institutional />} />
-                    <Route path="/cursos" element={<Courses />} />
+                    <Route path="/perfil" element={
+                        <VerificacaoRotas>
+                            <Profile/>
+                        </VerificacaoRotas>
+                    }/>
+                    <Route path="/financeiro" element={
+                        <VerificacaoRotas>
+                            <Finances/>
+                        </VerificacaoRotas>
+                    }/>
+                    <Route path="/notas" element={
+                        <VerificacaoRotas>
+                            <Notes/>
+                        </VerificacaoRotas>
+                    }/>
+                    <Route path="/institucional" element={
+                        <VerificacaoRotas>
+                            <Institutional/>
+                        </VerificacaoRotas>
+                    }/>
+                    <Route path="/cursos" element={
+                        <VerificacaoRotas>
+                            <Courses/>
+                        </VerificacaoRotas>
+                    }/>
                 </Routes>
             </Router>
         </>
