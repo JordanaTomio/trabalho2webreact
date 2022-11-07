@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import axios from "axios";
 
 function Register() {
     const navigate = useNavigate();
@@ -38,6 +39,9 @@ function Register() {
         if (email.length > 0 && senha.length > 0 && nome.length > 0 && validateEmail(email)) {
             setErrors('');
             localStorage.setItem("isLog", "true");
+            const usuario = {nome: nome, email: email, senha: senha};
+            axios.post('http://localhost:8090/usuarios/inserir', usuario).then(response => console.log(response.status));
+
             navigate("/menus");
         } else {
             setErrors("por favor, preencha todos os campos")
