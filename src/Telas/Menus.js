@@ -5,6 +5,7 @@ import { Card, CardActions, CardContent, FormControl, InputLabel, Select, TextFi
 import jsonData from "../exemplo.json";
 import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
+import axios from "axios";
 
 export default function Menus() {
 
@@ -65,6 +66,10 @@ export default function Menus() {
             const dadosParaInserir = [...dadosUsuario];
             dadosParaInserir.push(objetoTabela);
             setDadosUsuario(dadosParaInserir);
+
+            const ouvidoria = {tipo: tipo.toString(), comentario: comentario, email: email, assunto: assunto};
+            axios.post('http://localhost:8090/ouvidoria/inserir', ouvidoria).then(response => console.log(response.status));
+
 
             setTipo('');
             setComentario('');
