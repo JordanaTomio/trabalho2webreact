@@ -12,6 +12,7 @@ import logo from "../logo.png"
 import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LockIcon from '@mui/icons-material/Lock';
+import {useEffect} from "react";
 
 const isLoggedIn = false;
 
@@ -20,7 +21,26 @@ function Homepage() {
     const [email, setEmail] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [errors, setErrors] = React.useState('');
+    const [checked, setChecked] = React.useState(false);
     const [isLoggedIn, setisLoggedIn] = React.useState(false);
+
+    function validar() {
+        if (localStorage.getItem('emailSalvo') != null) {
+            setEmail(localStorage.getItem('emailSalvo'))
+            setSenha(localStorage.getItem('senhaSalva'))
+        } else {
+            setEmail('')
+            setSenha('')
+        }
+
+        setChecked(localStorage.getItem("checked"))
+        console.log("logado? " + localStorage.getItem("checked"))
+    }
+
+
+    useEffect(() => {
+        validar();
+    }, []);
 
     const handleChangeEmail = (event) => {
         setEmail(event.target.value);
@@ -28,6 +48,11 @@ function Homepage() {
 
     const handleChangeSenha = (event) => {
         setSenha(event.target.value);
+    };
+
+    const handleChange = () => {
+        setChecked(!checked);
+        localStorage.setItem("checked", !checked)
     };
 
     const registrar = () => {
@@ -41,6 +66,7 @@ function Homepage() {
         return re.test(email);
     }
 
+
     const logar = () => {
         console.log("logado:" + localStorage.getItem("isLog"))
 
@@ -49,11 +75,24 @@ function Homepage() {
 
             setErrors('');
             localStorage.setItem("isLog", "true");
+
+            if (checked === true) {
+                localStorage.setItem("emailSalvo", email);
+                localStorage.setItem("senhaSalva", senha);
+                localStorage.setItem("checked", true);
+            } else {
+                localStorage.setItem("senhaSalva", '');
+                localStorage.setItem("emailSalvo", '');
+                localStorage.setItem("checked", false);
+            }
+
             navigate("/menus")
         } else {
             setErrors("por favor, preencha todos os campos")
         }
+
     }
+
 
     return (
         <><div className="split left">
@@ -67,7 +106,6 @@ function Homepage() {
                 <div className="texto-padrao" style={{ textAlign: "left" }}>
                     <h5 style={{ marginBottom: "10px" }}>Iniciar sessão:</h5>
                 </div>
-
                 <TextField className="input"
                            margin="normal"
                            size="normal"
@@ -113,6 +151,15 @@ function Homepage() {
                                    </InputAdornment>
                                ),
                            }} />
+
+
+                <label>
+                    <input type="checkbox"
+                           checked={checked}
+                           onChange={handleChange}
+                           value={checked}/>
+                    Lembrar
+                </label>
 
                 <Button
                     style={{margin: "10px"}}

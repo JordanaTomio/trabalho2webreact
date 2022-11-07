@@ -14,15 +14,6 @@ import Rodape from "./Rodape";
 
 export default function Login() {
     const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = (index, event) => {
-        setAnchorEl({ [index]: event.currentTarget });
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
     return (
         <div>
             <Cabecalho></Cabecalho>
