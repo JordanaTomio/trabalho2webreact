@@ -1,8 +1,8 @@
 import "../Register.css";
-import { Link, TextField } from "@mui/material";
+import {Link, TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import React from "react";
 import axios from "axios";
 
@@ -40,9 +40,16 @@ function Register() {
             setErrors('');
             localStorage.setItem("isLog", "true");
             const usuario = {nome: nome, email: email, senha: senha};
-            axios.post('http://localhost:8090/usuarios/inserir', usuario).then(response => console.log(response.status));
+            axios.post('http://localhost:8090/usuarios/inserir', usuario)
+                .then(response => {
+                    console.log(response)
+                    if (response.data === 200) {
+                        navigate("/menus");
+                    } else if (response.data === 422) {
+                        setErrors("email ja cadastrado")
+                    }
+                });
 
-            navigate("/menus");
         } else {
             setErrors("por favor, preencha todos os campos")
         }
@@ -75,7 +82,7 @@ function Register() {
                         error={errors}
                         helperText={errors}
                     />
-                    <br />
+                    <br/>
                     <TextField
                         margin="normal"
                         required
@@ -89,7 +96,7 @@ function Register() {
                         error={errors}
                         helperText={errors}
                     />
-                    <br />
+                    <br/>
                     <TextField
                         margin="normal"
                         required
@@ -103,11 +110,11 @@ function Register() {
                         error={errors}
                         helperText={errors}
                     />
-                    <br />
+                    <br/>
                     <Button
                         variant="contained"
                         size={"large"}
-                        endIcon={<ArrowForwardIcon />}
+                        endIcon={<ArrowForwardIcon/>}
                         onClick={registrar}
                     >Cadastrar</Button>
                 </div>
@@ -116,4 +123,5 @@ function Register() {
         </>
     );
 }
+
 export default Register;
