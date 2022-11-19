@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import { Card, CardActions, CardContent, FormControl, InputLabel, Select, TextField, Typography } from "@mui/material";
-import jsonData from "../exemplo.json";
+import jsonData from "../exemplo_ouvidoria.json";
 import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
 import axios from "axios";

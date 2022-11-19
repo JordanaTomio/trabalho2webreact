@@ -1,23 +1,40 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Toolbar from "@material-ui/core/Toolbar";
-import { menuItems } from "../infoMenus";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
 import {
     Card,
     CardContent
 } from "@mui/material";
 import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
+import jsonData from "../exemplo_nota.json";
+import axios from "axios";
 
 export default function Login() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [dadosUsuario, setDadosUsuario] = useState(jsonData);
+
+    const colunasTabela = dadosUsuario.map((info) => {
+        return (
+            <tr>
+                <td>{info.avaliacao}</td>
+                <td>{info.nota}</td>
+                <td>{info.peso}</td>
+            </tr>
+        );
+    });
+
+    useEffect(() => {
+        console.log(localStorage.getItem('email'));
+        axios.post('http://localhost:8090/nota/find', localStorage.getItem('email')).then(response =>
+        {
+            console.log(response.data)
+            const dadosParaInserir = [...response.data];
+            setDadosUsuario(dadosParaInserir);
+        });
+
+    }, []);
+
     return (
         <div>
             <Cabecalho></Cabecalho>
-
 
                 <div className="cardNotas">
 
@@ -32,14 +49,9 @@ export default function Login() {
                                         <th>Nota</th>
                                         <th>Peso</th>
                                     </tr>
-                                    <tr>
-                                        <td>P1</td>
-                                        <td>7,2</td>
-                                        <td>30%</td>
-                                    </tr>
                                     </thead>
+                                    <tbody>{colunasTabela}</tbody>
                                 </table>
-
                                 <br />
                             </div>
 
@@ -51,3 +63,4 @@ export default function Login() {
         </div>
     );
 }
+

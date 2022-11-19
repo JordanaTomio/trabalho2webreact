@@ -5,7 +5,7 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import jsonData from "../exemplo.json";
+import jsonData from "../exemplo_ouvidoria.json";
 import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
 
