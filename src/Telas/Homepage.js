@@ -13,6 +13,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LockIcon from '@mui/icons-material/Lock';
 import {useEffect} from "react";
+import axios from "axios";
 
 const isLoggedIn = false;
 
@@ -66,7 +67,6 @@ function Homepage() {
         return re.test(email);
     }
 
-
     const logar = () => {
         console.log("logado:" + localStorage.getItem("isLog"))
 
@@ -75,6 +75,18 @@ function Homepage() {
 
             setErrors('');
             localStorage.setItem("isLog", "true");
+            localStorage.setItem("email", email);
+
+            const usuario = {nome: '', email: email, senha: senha};
+            axios.post('http://localhost:8090/usuarios/login', usuario)
+                .then(response => {
+                    console.log(response)
+                    if (response.data === 200) {
+                        navigate("/menus");
+                    } else if (response.data === 403) {
+                        setErrors("email/senha incorretos")
+                    }
+                });
 
             if (checked === true) {
                 localStorage.setItem("emailSalvo", email);
@@ -86,13 +98,10 @@ function Homepage() {
                 localStorage.setItem("checked", false);
             }
 
-            navigate("/menus")
         } else {
             setErrors("por favor, preencha todos os campos")
         }
-
     }
-
 
     return (
         <><div className="split left">

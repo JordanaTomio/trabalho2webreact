@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import { Card, CardActions, CardContent, FormControl, InputLabel, Select, TextField, Typography } from "@mui/material";
@@ -70,13 +70,23 @@ export default function Menus() {
             const ouvidoria = {tipo: tipo.toString(), comentario: comentario, email: email, assunto: assunto};
             axios.post('http://localhost:8090/ouvidoria/inserir', ouvidoria).then(response => console.log(response.status));
 
-
             setTipo('');
             setComentario('');
             setEmail('');
             setAssunto('');
         }
     };
+
+    useEffect(() => {
+        console.log(localStorage.getItem('email'));
+        axios.post('http://localhost:8090/ouvidoria/find', localStorage.getItem('email')).then(response =>
+        {
+            const dadosParaInserir = [...response.data];
+            dadosParaInserir.push(objetoTabela);
+            setDadosUsuario(dadosParaInserir);
+        });
+
+    }, []);
 
     return (
         <div>
