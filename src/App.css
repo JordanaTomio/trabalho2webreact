@@ -137,6 +137,26 @@
   font-weight:bold;
 }
 
+.botaoPerfil {
+  display: flex;
+  justify-content: center;
+  width: 86%;
+}
+
+.botaoEditarPerfil {
+  display: flex;
+  justify-content: left;
+  left: 5%;
+  width: 100%;
+}
+
+.botaoExcluirPerfil {
+  display: flex;
+  justify-content: right;
+  left: 32%;
+  width: 115%;
+}
+
 .toolbar {
   position: fixed;
   top: 0 ;
@@ -325,6 +345,14 @@ a:hover {
   margin-top: -25px;
 }
 
+.cardPerfil {
+  display: flex;
+  padding: 10px;
+  margin-right: 10px;
+  width: 35%;
+  margin-top: -25px;
+}
+
 .imagemInstitucional {
   display: flex;
   float: left;
@@ -353,18 +381,12 @@ a:hover {
   justify-content: center;
 }
 
-.textoImagemPerfil {
-  display: flex;
-  justify-content: right;
-  width: 86%;
-}
-
 .imagemPerfil {
   width: 150px;
   height: 150px;
   position: relative;
   margin-top: -255px;
-  margin-left: 325px;
+  margin-left: 305px;
   margin-bottom: 90px;
 }
 
