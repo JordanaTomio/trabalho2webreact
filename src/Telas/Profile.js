@@ -10,6 +10,7 @@ import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
 import axios from "axios";
 import { ContactPageOutlined } from "@mui/icons-material";
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
 
@@ -18,6 +19,8 @@ export default function Login() {
     const [email, setEmail] = React.useState('');
     const [errors, setErrors] = React.useState('');
     const [checked, setChecked] = React.useState(false);
+
+    const navigate = useNavigate();
 
     const handleChangeSenha = (event) => {
         setSenha(event.target.value);
@@ -77,6 +80,18 @@ export default function Login() {
         } else {
             setErrors("por favor, preencha todos os campos")
         }
+    }
+
+    function deletaConta() {
+        axios.post('http://localhost:8090/usuario/excluir', localStorage.getItem('email')).then(response => {
+            if(response.data === 200) {
+                alert("Perfil deletado com sucesso");
+
+                navigate("/");
+            } else {
+                alert("Erro ao deletar perfil!");
+            }
+        });
     }
 
     useEffect(() => {
